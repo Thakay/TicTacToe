@@ -14,7 +14,7 @@ def printBoard(board):
     print(board['low-L'].center(5) + '|'.ljust(3) + board['low'].center(1) + '|'.rjust(3) + board['low-R'].center(5))
     print('\n')
 
-printBoard(gameBoard)
+
 
 def logic(board: dict) -> str:
 
@@ -44,7 +44,6 @@ def move(board: dict, location: str, turn: str)->bool:
     else:
         print("Invalid Move")
         return False
-move(gameBoard,"top-L","X")
-printBoard(gameBoard)
+
 
     
