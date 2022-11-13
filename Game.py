@@ -4,6 +4,9 @@
 gameBoard = {"top-L":"", "top":"", "top-R":"", 
             "mid-L":"", "mid":"", "mid-R":"", 
             "low-L":"", "low":"", "low-R":""}
+moves = {"7":"top-L", "8":"top", "9": "top-R", 
+        "4":"mid-L", "5":"mid", "6": "mid-R",
+        "1":"low-L", "2":"low", "3": "low-R",}
 
 #Function to print the game board
 def printBoard(board):
@@ -44,6 +47,44 @@ def move(board: dict, location: str, turn: str)->bool:
     else:
         print("Invalid Move")
         return False
+
+def play(board: dict,start: bool = 1):
+    
+    turn = start
+    turns = ("X","O")
+    print("Welcome to the TIC-TAC-TOE")
+    print("Enter your move when your turn Numpad like:")
+    print("7 8 9 ")
+    print("4 5 6 ")
+    print("1 2 3 ")
+    print("Each number is mapped to the location on the board ex: 7 is top left", "\n")
+
+    printBoard(board)
+    for i in range(9):
+        if turn:
+            char = turns[0]
+        else:
+            char = turns[1]
+        
+        #Take Valid input
+        while True:
+            location = input(f"Its is {char}'s turn input your prefered location (1-9): ")
+            user_i = moves.get(location)
+            if user_i:
+                move(board,user_i,char)
+                break
+            else:
+                print("Invalid Move, Try Again!")
+
+        printBoard(board)
+        turn =  not turn
+        res = logic(board)
+        if res:
+            print(f"{res} WON !!")
+            break
+        elif i == 8:
+            print("Draw!")
+    print("Game is over!")  
 
 
     
