@@ -1,9 +1,9 @@
 
 
 #Data structure to store game states
-gameBoard = {"top-L":"X", "top":"X", "top-R":"X", 
-            "mid-L":"", "mid":"O", "mid-R":"", 
-            "low-L":"", "low":"", "low-R":"X"}
+gameBoard = {"top-L":"", "top":"", "top-R":"", 
+            "mid-L":"", "mid":"", "mid-R":"", 
+            "low-L":"", "low":"", "low-R":""}
 
 #Function to print the game board
 def printBoard(board):
@@ -12,8 +12,9 @@ def printBoard(board):
     print(board['mid-L'].center(5) + '|'.ljust(3) + board['mid'].center(1) + '|'.rjust(3) + board['mid-R'].center(5))
     print('-----------------')
     print(board['low-L'].center(5) + '|'.ljust(3) + board['low'].center(1) + '|'.rjust(3) + board['low-R'].center(5))
+    print('\n')
 
-#printBoard(gameBoard)
+printBoard(gameBoard)
 
 def logic(board: dict) -> str:
 
@@ -35,6 +36,15 @@ def logic(board: dict) -> str:
         return board.get('top-R')
     else:
         return None
-print(logic(gameBoard))
+
+def move(board: dict, location: str, turn: str)->bool:
+    if board.get(location) == "":
+        board[location] = turn
+        return True
+    else:
+        print("Invalid Move")
+        return False
+move(gameBoard,"top-L","X")
+printBoard(gameBoard)
 
     
