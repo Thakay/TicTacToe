@@ -86,5 +86,6 @@ def play(board: dict,start: bool = 1):
             print("Draw!")
     print("Game is over!")  
 
-
+if __name__ == "__main__":
+    play(gameBoard)
     
