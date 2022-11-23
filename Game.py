@@ -119,7 +119,7 @@ def play(board: dict, start: bool = 1):
             break
         elif i == 8:
             print("Draw!")
-    print("Game is over!")
+    print("Game is over !")
 
 
 if __name__ == "__main__":
