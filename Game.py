@@ -124,6 +124,7 @@ def play(board: dict, start: bool = 1):
 
 if __name__ == "__main__":
     play = 'y'
+    
     while play == 'y':
         play(gameBoard)
         print("\n","----------------------", "\n")
