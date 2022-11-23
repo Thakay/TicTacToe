@@ -123,4 +123,9 @@ def play(board: dict, start: bool = 1):
 
 
 if __name__ == "__main__":
-    play(gameBoard)
+    play = 'y'
+    while play == 'y':
+        play(gameBoard)
+        print("\n","----------------------", "\n")
+        print("If you want to play again enter 'y' otherwise enter 'n'.")
+        play = input()
